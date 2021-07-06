@@ -19,6 +19,8 @@ abstract class ValueObject<T>{
     if (identical(this, other)) return true;
     return other is ValueObject<T> && other.value == value;
   }
+
+  bool isValid() => value.isRight();
 }
 
 @immutable
