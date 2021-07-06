@@ -16,10 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AuthFailureTearOff {
   const _$AuthFailureTearOff();
 
-  CancelledByUser cancelledByUser() {
-    return const CancelledByUser();
-  }
-
   InvalidUsernameAndPasswordCombination
       invalidUsernameAndPasswordCombination() {
     return const InvalidUsernameAndPasswordCombination();
@@ -33,27 +29,23 @@ const $AuthFailure = _$AuthFailureTearOff();
 mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
     required TResult Function() invalidUsernameAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
     TResult Function()? invalidUsernameAndPasswordCombination,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
     required TResult Function(InvalidUsernameAndPasswordCombination value)
         invalidUsernameAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
     TResult Function(InvalidUsernameAndPasswordCombination value)?
         invalidUsernameAndPasswordCombination,
     required TResult orElse(),
@@ -75,94 +67,6 @@ class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
   final AuthFailure _value;
   // ignore: unused_field
   final $Res Function(AuthFailure) _then;
-}
-
-/// @nodoc
-abstract class $CancelledByUserCopyWith<$Res> {
-  factory $CancelledByUserCopyWith(
-          CancelledByUser value, $Res Function(CancelledByUser) then) =
-      _$CancelledByUserCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$CancelledByUserCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
-    implements $CancelledByUserCopyWith<$Res> {
-  _$CancelledByUserCopyWithImpl(
-      CancelledByUser _value, $Res Function(CancelledByUser) _then)
-      : super(_value, (v) => _then(v as CancelledByUser));
-
-  @override
-  CancelledByUser get _value => super._value as CancelledByUser;
-}
-
-/// @nodoc
-
-class _$CancelledByUser implements CancelledByUser {
-  const _$CancelledByUser();
-
-  @override
-  String toString() {
-    return 'AuthFailure.cancelledByUser()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CancelledByUser);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
-    required TResult Function() invalidUsernameAndPasswordCombination,
-  }) {
-    return cancelledByUser();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? invalidUsernameAndPasswordCombination,
-    required TResult orElse(),
-  }) {
-    if (cancelledByUser != null) {
-      return cancelledByUser();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(InvalidUsernameAndPasswordCombination value)
-        invalidUsernameAndPasswordCombination,
-  }) {
-    return cancelledByUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(InvalidUsernameAndPasswordCombination value)?
-        invalidUsernameAndPasswordCombination,
-    required TResult orElse(),
-  }) {
-    if (cancelledByUser != null) {
-      return cancelledByUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CancelledByUser implements AuthFailure {
-  const factory CancelledByUser() = _$CancelledByUser;
 }
 
 /// @nodoc
@@ -210,7 +114,6 @@ class _$InvalidUsernameAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
     required TResult Function() invalidUsernameAndPasswordCombination,
   }) {
     return invalidUsernameAndPasswordCombination();
@@ -219,7 +122,6 @@ class _$InvalidUsernameAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
     TResult Function()? invalidUsernameAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -232,7 +134,6 @@ class _$InvalidUsernameAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
     required TResult Function(InvalidUsernameAndPasswordCombination value)
         invalidUsernameAndPasswordCombination,
   }) {
@@ -242,7 +143,6 @@ class _$InvalidUsernameAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
     TResult Function(InvalidUsernameAndPasswordCombination value)?
         invalidUsernameAndPasswordCombination,
     required TResult orElse(),
