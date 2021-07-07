@@ -1,4 +1,4 @@
-part of 'sign_in_form_bloc';
+part of 'sign_in_form_bloc.dart';
 
 @freezed
 abstract class SignInFormState with _$SignInFormState {

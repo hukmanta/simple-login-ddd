@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,10 +13,9 @@ part 'sign_in_form_bloc.freezed.dart';
 
 class SignInFromBloc extends Bloc<SignInFormEvent, SignInFormState>{
   final IAuthFacade _authFacade;
+  
+  SignInFromBloc(this._authFacade) : super(SignInFormState.initial());
 
-  SignInFromBloc(this._authFacade);
-
-  @override
   SignInFormState get initialState => SignInFormState.initial();
 
   @override
