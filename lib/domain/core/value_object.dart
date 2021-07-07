@@ -30,10 +30,10 @@ abstract class ValueObject<T>{
 
 @immutable
 class Username extends ValueObject<String> {
+  @override
   final Either<ValueFailure<String>, String> value;
 
   factory Username(String input){
-    assert(input != null);
     return Username._(validateUsername(input));
   }
 
@@ -41,10 +41,10 @@ class Username extends ValueObject<String> {
 }
 
 class Password extends ValueObject<String>{
+  @override
   final Either<ValueFailure<String>, String> value;
 
   factory Password(String input){
-    assert(input != null);
     return Password._(validatePassword(input));
   }
 

@@ -13,8 +13,9 @@ class SignInFacade implements IAuthFacade {
     final passwordStr = password.getOrCrash();
     if (usernameStr is String && passwordStr is String) {
       return right(unit);
-    }  else
+    }  else {
       return left(const AuthFailure.invalidUsernameAndPasswordCombination());
+    }
     
   }
 }
