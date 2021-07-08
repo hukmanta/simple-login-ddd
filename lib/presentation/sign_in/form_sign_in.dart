@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,7 +16,7 @@ class FormSignIn extends StatelessWidget {
               const Text(
                 'Please Sign In',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 130),
+                style: TextStyle(fontSize: 100),
               ),
               const SizedBox(
                 height: 8,
