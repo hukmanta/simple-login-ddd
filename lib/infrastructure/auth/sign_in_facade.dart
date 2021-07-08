@@ -9,11 +9,11 @@ class SignInFacade implements IAuthFacade {
   @override
   Future<Either<AuthFailure, Unit>> signWithUsernameAndPassword(
       {required Username username, required Password password}) async {
-    final usernameStr = username.getOrCrash();
-    final passwordStr = password.getOrCrash();
-    if (usernameStr is String && passwordStr is String) {
+    try {
+      username.getOrCrash();
+      password.getOrCrash();
       return right(unit);
-    }  else {
+    }  catch (e) {
       return left(const AuthFailure.invalidUsernameAndPasswordCombination());
     }
     

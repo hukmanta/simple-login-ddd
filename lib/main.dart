@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
+import 'package:simple_login_ddd/injection.dart';
 import 'package:simple_login_ddd/presentation/sign_in_page.dart';
 
 void main() {
+  configureInjection(Environment.dev);
   runApp(MyApp());
 }
 
