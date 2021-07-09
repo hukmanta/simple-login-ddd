@@ -7,5 +7,5 @@ abstract class SignInFormEvent with _$SignInFormEvent {
   const factory SignInFormEvent.usernameChanged(String usernameStr) = UsernameChanged;
   const factory SignInFormEvent.passwordChanged(String passwordStr) = PasswordChanged;
   const factory SignInFormEvent.signInWithUsernameAndPasswordPressed() = SignInWithUsernameAndPasswordPressed;
-  const factory SignInFormEvent.moveToWeatherPage() = MoveToWheaterPage;
+  const factory SignInFormEvent.moveToWeatherPage(BuildContext context) = MoveToWheaterPage;
 }

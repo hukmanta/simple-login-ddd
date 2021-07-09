@@ -12,7 +12,6 @@ class SplashPage extends StatelessWidget {
     return BlocListener<AuthBloc, AuthState>( listener: (context, state)
     {
       state.map(initial: (_){
-        print('initial state');
       },
           authenticated: (_){
             // ignore: avoid_print

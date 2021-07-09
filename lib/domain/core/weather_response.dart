@@ -56,6 +56,24 @@ class WeatherResponse {
     _cod = cod;
 }
 
+  static WeatherResponse createWeatherResponse(){
+    return WeatherResponse(
+      coord: Coord(),
+      weather: [Weather()],
+      base: '',
+      main: Main(),
+      wind: Wind(),
+      cod: 0,
+      timezone: 0,
+      clouds: Clouds(),
+      id: 0,
+      dt: 0,
+      name: '',
+      visibility: 0,
+      sys: Sys(),
+    );
+  }
+
   WeatherResponse.fromJson(dynamic json) {
     _coord = json["coord"] != null ? Coord.fromJson(json["coord"]) : Coord();
     if (json["weather"] != null) {

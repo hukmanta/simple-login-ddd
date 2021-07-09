@@ -31,6 +31,12 @@ class _$SignInFormEventTearOff {
   SignInWithUsernameAndPasswordPressed signInWithUsernameAndPasswordPressed() {
     return const SignInWithUsernameAndPasswordPressed();
   }
+
+  MoveToWheaterPage moveToWeatherPage(BuildContext context) {
+    return MoveToWheaterPage(
+      context,
+    );
+  }
 }
 
 /// @nodoc
@@ -43,6 +49,7 @@ mixin _$SignInFormEvent {
     required TResult Function(String usernameStr) usernameChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithUsernameAndPasswordPressed,
+    required TResult Function(BuildContext context) moveToWeatherPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +57,7 @@ mixin _$SignInFormEvent {
     TResult Function(String usernameStr)? usernameChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithUsernameAndPasswordPressed,
+    TResult Function(BuildContext context)? moveToWeatherPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +67,7 @@ mixin _$SignInFormEvent {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(SignInWithUsernameAndPasswordPressed value)
         signInWithUsernameAndPasswordPressed,
+    required TResult Function(MoveToWheaterPage value) moveToWeatherPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +76,7 @@ mixin _$SignInFormEvent {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(SignInWithUsernameAndPasswordPressed value)?
         signInWithUsernameAndPasswordPressed,
+    TResult Function(MoveToWheaterPage value)? moveToWeatherPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +168,7 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function(String usernameStr) usernameChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithUsernameAndPasswordPressed,
+    required TResult Function(BuildContext context) moveToWeatherPage,
   }) {
     return usernameChanged(usernameStr);
   }
@@ -168,6 +179,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult Function(String usernameStr)? usernameChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithUsernameAndPasswordPressed,
+    TResult Function(BuildContext context)? moveToWeatherPage,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -183,6 +195,7 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(SignInWithUsernameAndPasswordPressed value)
         signInWithUsernameAndPasswordPressed,
+    required TResult Function(MoveToWheaterPage value) moveToWeatherPage,
   }) {
     return usernameChanged(this);
   }
@@ -194,6 +207,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(SignInWithUsernameAndPasswordPressed value)?
         signInWithUsernameAndPasswordPressed,
+    TResult Function(MoveToWheaterPage value)? moveToWeatherPage,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -281,6 +295,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String usernameStr) usernameChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithUsernameAndPasswordPressed,
+    required TResult Function(BuildContext context) moveToWeatherPage,
   }) {
     return passwordChanged(passwordStr);
   }
@@ -291,6 +306,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String usernameStr)? usernameChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithUsernameAndPasswordPressed,
+    TResult Function(BuildContext context)? moveToWeatherPage,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -306,6 +322,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(SignInWithUsernameAndPasswordPressed value)
         signInWithUsernameAndPasswordPressed,
+    required TResult Function(MoveToWheaterPage value) moveToWeatherPage,
   }) {
     return passwordChanged(this);
   }
@@ -317,6 +334,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(SignInWithUsernameAndPasswordPressed value)?
         signInWithUsernameAndPasswordPressed,
+    TResult Function(MoveToWheaterPage value)? moveToWeatherPage,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -383,6 +401,7 @@ class _$SignInWithUsernameAndPasswordPressed
     required TResult Function(String usernameStr) usernameChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithUsernameAndPasswordPressed,
+    required TResult Function(BuildContext context) moveToWeatherPage,
   }) {
     return signInWithUsernameAndPasswordPressed();
   }
@@ -393,6 +412,7 @@ class _$SignInWithUsernameAndPasswordPressed
     TResult Function(String usernameStr)? usernameChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithUsernameAndPasswordPressed,
+    TResult Function(BuildContext context)? moveToWeatherPage,
     required TResult orElse(),
   }) {
     if (signInWithUsernameAndPasswordPressed != null) {
@@ -408,6 +428,7 @@ class _$SignInWithUsernameAndPasswordPressed
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(SignInWithUsernameAndPasswordPressed value)
         signInWithUsernameAndPasswordPressed,
+    required TResult Function(MoveToWheaterPage value) moveToWeatherPage,
   }) {
     return signInWithUsernameAndPasswordPressed(this);
   }
@@ -419,6 +440,7 @@ class _$SignInWithUsernameAndPasswordPressed
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(SignInWithUsernameAndPasswordPressed value)?
         signInWithUsernameAndPasswordPressed,
+    TResult Function(MoveToWheaterPage value)? moveToWeatherPage,
     required TResult orElse(),
   }) {
     if (signInWithUsernameAndPasswordPressed != null) {
@@ -431,6 +453,132 @@ class _$SignInWithUsernameAndPasswordPressed
 abstract class SignInWithUsernameAndPasswordPressed implements SignInFormEvent {
   const factory SignInWithUsernameAndPasswordPressed() =
       _$SignInWithUsernameAndPasswordPressed;
+}
+
+/// @nodoc
+abstract class $MoveToWheaterPageCopyWith<$Res> {
+  factory $MoveToWheaterPageCopyWith(
+          MoveToWheaterPage value, $Res Function(MoveToWheaterPage) then) =
+      _$MoveToWheaterPageCopyWithImpl<$Res>;
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class _$MoveToWheaterPageCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements $MoveToWheaterPageCopyWith<$Res> {
+  _$MoveToWheaterPageCopyWithImpl(
+      MoveToWheaterPage _value, $Res Function(MoveToWheaterPage) _then)
+      : super(_value, (v) => _then(v as MoveToWheaterPage));
+
+  @override
+  MoveToWheaterPage get _value => super._value as MoveToWheaterPage;
+
+  @override
+  $Res call({
+    Object? context = freezed,
+  }) {
+    return _then(MoveToWheaterPage(
+      context == freezed
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MoveToWheaterPage implements MoveToWheaterPage {
+  const _$MoveToWheaterPage(this.context);
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.moveToWeatherPage(context: $context)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is MoveToWheaterPage &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality().equals(other.context, context)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
+
+  @JsonKey(ignore: true)
+  @override
+  $MoveToWheaterPageCopyWith<MoveToWheaterPage> get copyWith =>
+      _$MoveToWheaterPageCopyWithImpl<MoveToWheaterPage>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String usernameStr) usernameChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithUsernameAndPasswordPressed,
+    required TResult Function(BuildContext context) moveToWeatherPage,
+  }) {
+    return moveToWeatherPage(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String usernameStr)? usernameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithUsernameAndPasswordPressed,
+    TResult Function(BuildContext context)? moveToWeatherPage,
+    required TResult orElse(),
+  }) {
+    if (moveToWeatherPage != null) {
+      return moveToWeatherPage(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithUsernameAndPasswordPressed value)
+        signInWithUsernameAndPasswordPressed,
+    required TResult Function(MoveToWheaterPage value) moveToWeatherPage,
+  }) {
+    return moveToWeatherPage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithUsernameAndPasswordPressed value)?
+        signInWithUsernameAndPasswordPressed,
+    TResult Function(MoveToWheaterPage value)? moveToWeatherPage,
+    required TResult orElse(),
+  }) {
+    if (moveToWeatherPage != null) {
+      return moveToWeatherPage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MoveToWheaterPage implements SignInFormEvent {
+  const factory MoveToWheaterPage(BuildContext context) = _$MoveToWheaterPage;
+
+  BuildContext get context => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MoveToWheaterPageCopyWith<MoveToWheaterPage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

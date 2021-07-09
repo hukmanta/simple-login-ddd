@@ -85,10 +85,9 @@ class FormSignIn extends StatelessWidget {
                           invalidUsernameAndPasswordCombination: (_) =>
                               'Username dan Password salah')).show(context);
                 }, (_) {
-              // Navigasi jika login berhasil
-              BlocProvider.of<SignInFromBloc>(context).add(
-                const SignInFormEvent.moveToWeatherPage()
-              );
+                  // Navigasi jika login berhasil
+                  BlocProvider.of<SignInFromBloc>(context)
+                      .add(SignInFormEvent.moveToWeatherPage(context));
                 }));
       },
     );

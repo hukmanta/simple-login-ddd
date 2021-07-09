@@ -25,7 +25,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.Config>(() => _i4.Config());
   gh.lazySingleton<_i5.IAuthFacade>(() => _i6.SignInFacade());
   gh.lazySingleton<_i7.IWeatherFacade>(() => _i8.WeatherFacade());
-  gh.factory<_i9.SignInFromBloc>(
-      () => _i9.SignInFromBloc(get<_i5.IAuthFacade>()));
+  gh.factory<_i9.SignInFromBloc>(() =>
+      _i9.SignInFromBloc(get<_i5.IAuthFacade>(), get<_i7.IWeatherFacade>()));
   return get;
 }
