@@ -15,7 +15,9 @@ part 'sign_in_form_bloc.freezed.dart';
 @injectable
 class SignInFromBloc extends Bloc<SignInFormEvent, SignInFormState>{
   final IAuthFacade _authFacade;
-  
+  //final BuildContext _context;
+
+  //SignInFromBloc(this._authFacade, this._context) : super(SignInFormState.initial());
   SignInFromBloc(this._authFacade) : super(SignInFormState.initial());
 
   SignInFormState get initialState => SignInFormState.initial();
@@ -55,7 +57,10 @@ class SignInFromBloc extends Bloc<SignInFormEvent, SignInFormState>{
                   showErrorMessages: true,
                   authFailureOrSuccessOption: optionOf(failureOrSuccess)
               );
-        },
+        }, moveToWeatherPage: (e) async* {
+          //TODO navigasi ke Weather Page
+          UnimplementedError();
+      },
       );
     }
 

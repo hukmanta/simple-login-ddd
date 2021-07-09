@@ -19,6 +19,10 @@ class _$AuthEventTearOff {
   AuthCheckRequested authCheckRequested() {
     return const AuthCheckRequested();
   }
+
+  GrantedLogin grantedLogIn() {
+    return const GrantedLogin();
+  }
 }
 
 /// @nodoc
@@ -29,22 +33,26 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
+    required TResult Function() grantedLogIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? grantedLogIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequested value) authCheckRequested,
+    required TResult Function(GrantedLogin value) grantedLogIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(GrantedLogin value)? grantedLogIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +114,7 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
+    required TResult Function() grantedLogIn,
   }) {
     return authCheckRequested();
   }
@@ -114,6 +123,7 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? grantedLogIn,
     required TResult orElse(),
   }) {
     if (authCheckRequested != null) {
@@ -126,6 +136,7 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequested value) authCheckRequested,
+    required TResult Function(GrantedLogin value) grantedLogIn,
   }) {
     return authCheckRequested(this);
   }
@@ -134,6 +145,7 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(GrantedLogin value)? grantedLogIn,
     required TResult orElse(),
   }) {
     if (authCheckRequested != null) {
@@ -145,6 +157,91 @@ class _$AuthCheckRequested implements AuthCheckRequested {
 
 abstract class AuthCheckRequested implements AuthEvent {
   const factory AuthCheckRequested() = _$AuthCheckRequested;
+}
+
+/// @nodoc
+abstract class $GrantedLoginCopyWith<$Res> {
+  factory $GrantedLoginCopyWith(
+          GrantedLogin value, $Res Function(GrantedLogin) then) =
+      _$GrantedLoginCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GrantedLoginCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements $GrantedLoginCopyWith<$Res> {
+  _$GrantedLoginCopyWithImpl(
+      GrantedLogin _value, $Res Function(GrantedLogin) _then)
+      : super(_value, (v) => _then(v as GrantedLogin));
+
+  @override
+  GrantedLogin get _value => super._value as GrantedLogin;
+}
+
+/// @nodoc
+
+class _$GrantedLogin implements GrantedLogin {
+  const _$GrantedLogin();
+
+  @override
+  String toString() {
+    return 'AuthEvent.grantedLogIn()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GrantedLogin);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() grantedLogIn,
+  }) {
+    return grantedLogIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? grantedLogIn,
+    required TResult orElse(),
+  }) {
+    if (grantedLogIn != null) {
+      return grantedLogIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthCheckRequested value) authCheckRequested,
+    required TResult Function(GrantedLogin value) grantedLogIn,
+  }) {
+    return grantedLogIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(GrantedLogin value)? grantedLogIn,
+    required TResult orElse(),
+  }) {
+    if (grantedLogIn != null) {
+      return grantedLogIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GrantedLogin implements AuthEvent {
+  const factory GrantedLogin() = _$GrantedLogin;
 }
 
 /// @nodoc

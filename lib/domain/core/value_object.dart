@@ -10,7 +10,13 @@ abstract class ValueObject<T>{
   Either<ValueFailure<T>,T> get value;
 
   @override
-  String toString() => 'Username($value)';
+  String toString() {
+    switch (T){
+      case Username: return 'Username($value)';
+      case Password: return 'Password($value)';
+      default: return 'Unknown';
+    }
+  }
 
   @override
   int get hashCode => value.hashCode;

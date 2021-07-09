@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simple_login_ddd/application/auth/auth_bloc.dart';
 import 'package:simple_login_ddd/application/auth/sign_in_form/sign_in_form_bloc.dart';
 
 class FormSignIn extends StatelessWidget {
@@ -87,9 +86,9 @@ class FormSignIn extends StatelessWidget {
                               'Username dan Password salah')).show(context);
                 }, (_) {
               // Navigasi jika login berhasil
-              /*BlocProvider.of<AuthBloc>(context).add(
-                const AuthEvent.grantedLogIn()
-              );*/
+              BlocProvider.of<SignInFromBloc>(context).add(
+                const SignInFormEvent.moveToWeatherPage()
+              );
                 }));
       },
     );

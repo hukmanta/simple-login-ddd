@@ -22,7 +22,7 @@ class _AppWidgetState extends State<AppWidget> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context)=>
-        getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()))
+        getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested(),),),
       ],
       child: MaterialApp.router(
         title: 'Sign In Demo',

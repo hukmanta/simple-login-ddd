@@ -7,7 +7,7 @@
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
 
-import '../sign_in_page.dart' as _i4;
+import '../sign_in/sign_in_page.dart' as _i4;
 import '../splash/splash_page.dart' as _i3;
 
 class AppRoute extends _i1.RootStackRouter {
