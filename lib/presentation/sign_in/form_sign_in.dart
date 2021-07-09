@@ -11,6 +11,7 @@ class FormSignIn extends StatelessWidget {
     return BlocConsumer<SignInFromBloc, SignInFormState>(
       builder: (context, state) {
         return Form(
+          // ignore: deprecated_member_use
           autovalidate: state.showErrorMessages,
           child: ListView(
             children: [
