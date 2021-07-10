@@ -17,6 +17,7 @@ class SplashPage extends StatelessWidget {
             // ignore: avoid_print
             print('user 1 authenticated');},
           unauthenticated: (_){
+            // ignore: avoid_print
             print('unauthenticated');
             AutoRouter.of(context).replace(SignInPageRoute(title: 'Sign In Demo'));
           });

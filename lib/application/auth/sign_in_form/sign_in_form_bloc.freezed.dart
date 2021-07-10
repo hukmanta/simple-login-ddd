@@ -590,13 +590,16 @@ class _$SignInFormStateTearOff {
       required Password password,
       required bool showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) {
+      required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
+      required Option<Either<WeatherFailure, WeatherResponse>>
+          weatherFailureOrResponseOption}) {
     return _SignInFormState(
       username: username,
       password: password,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       authFailureOrSuccessOption: authFailureOrSuccessOption,
+      weatherFailureOrResponseOption: weatherFailureOrResponseOption,
     );
   }
 }
@@ -612,6 +615,8 @@ mixin _$SignInFormState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  Option<Either<WeatherFailure, WeatherResponse>>
+      get weatherFailureOrResponseOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -628,7 +633,9 @@ abstract class $SignInFormStateCopyWith<$Res> {
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
+      Option<Either<WeatherFailure, WeatherResponse>>
+          weatherFailureOrResponseOption});
 }
 
 /// @nodoc
@@ -647,6 +654,7 @@ class _$SignInFormStateCopyWithImpl<$Res>
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
+    Object? weatherFailureOrResponseOption = freezed,
   }) {
     return _then(_value.copyWith(
       username: username == freezed
@@ -669,6 +677,10 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      weatherFailureOrResponseOption: weatherFailureOrResponseOption == freezed
+          ? _value.weatherFailureOrResponseOption
+          : weatherFailureOrResponseOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<WeatherFailure, WeatherResponse>>,
     ));
   }
 }
@@ -685,7 +697,9 @@ abstract class _$SignInFormStateCopyWith<$Res>
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
+      Option<Either<WeatherFailure, WeatherResponse>>
+          weatherFailureOrResponseOption});
 }
 
 /// @nodoc
@@ -706,6 +720,7 @@ class __$SignInFormStateCopyWithImpl<$Res>
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
+    Object? weatherFailureOrResponseOption = freezed,
   }) {
     return _then(_SignInFormState(
       username: username == freezed
@@ -728,6 +743,10 @@ class __$SignInFormStateCopyWithImpl<$Res>
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      weatherFailureOrResponseOption: weatherFailureOrResponseOption == freezed
+          ? _value.weatherFailureOrResponseOption
+          : weatherFailureOrResponseOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<WeatherFailure, WeatherResponse>>,
     ));
   }
 }
@@ -740,7 +759,8 @@ class _$_SignInFormState implements _SignInFormState {
       required this.password,
       required this.showErrorMessages,
       required this.isSubmitting,
-      required this.authFailureOrSuccessOption});
+      required this.authFailureOrSuccessOption,
+      required this.weatherFailureOrResponseOption});
 
   @override
   final Username username;
@@ -752,10 +772,13 @@ class _$_SignInFormState implements _SignInFormState {
   final bool isSubmitting;
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
+  @override
+  final Option<Either<WeatherFailure, WeatherResponse>>
+      weatherFailureOrResponseOption;
 
   @override
   String toString() {
-    return 'SignInFormState(username: $username, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'SignInFormState(username: $username, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption, weatherFailureOrResponseOption: $weatherFailureOrResponseOption)';
   }
 
   @override
@@ -778,7 +801,12 @@ class _$_SignInFormState implements _SignInFormState {
                     authFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption)));
+                    authFailureOrSuccessOption)) &&
+            (identical(other.weatherFailureOrResponseOption,
+                    weatherFailureOrResponseOption) ||
+                const DeepCollectionEquality().equals(
+                    other.weatherFailureOrResponseOption,
+                    weatherFailureOrResponseOption)));
   }
 
   @override
@@ -788,7 +816,8 @@ class _$_SignInFormState implements _SignInFormState {
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(authFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(weatherFailureOrResponseOption);
 
   @JsonKey(ignore: true)
   @override
@@ -802,8 +831,9 @@ abstract class _SignInFormState implements SignInFormState {
       required Password password,
       required bool showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<AuthFailure, Unit>>
-          authFailureOrSuccessOption}) = _$_SignInFormState;
+      required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
+      required Option<Either<WeatherFailure, WeatherResponse>>
+          weatherFailureOrResponseOption}) = _$_SignInFormState;
 
   @override
   Username get username => throw _privateConstructorUsedError;
@@ -816,6 +846,9 @@ abstract class _SignInFormState implements SignInFormState {
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  @override
+  Option<Either<WeatherFailure, WeatherResponse>>
+      get weatherFailureOrResponseOption => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
