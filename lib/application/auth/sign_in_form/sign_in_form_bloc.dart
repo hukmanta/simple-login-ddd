@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,7 +9,6 @@ import 'package:simple_login_ddd/domain/core/value_object.dart';
 import 'package:simple_login_ddd/domain/core/weather_response.dart';
 import 'package:simple_login_ddd/domain/weather/i_weather_facade.dart';
 import 'package:simple_login_ddd/domain/weather/weather_failure.dart';
-import 'package:simple_login_ddd/presentation/routes/app_route.gr.dart';
 
 part 'sign_in_form_event.dart';
 
@@ -66,12 +64,8 @@ class SignInFromBloc extends Bloc<SignInFormEvent, SignInFormState> {
         Either<WeatherFailure, WeatherResponse> failureOrResponse;
         failureOrResponse =
             await _weatherFacade.getWeatherInfo(city: 'jakarta');
-        state.copyWith(
+        yield state.copyWith(
             weatherFailureOrResponseOption: optionOf(failureOrResponse));
-        failureOrResponse.fold((l) => {}, (r) => {
-        AutoRouter.of(e.context).replace(
-        WeatherPageRoute(data:r))
-        });
       },
     );
   }

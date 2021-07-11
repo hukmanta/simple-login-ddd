@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_login_ddd/application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'package:simple_login_ddd/presentation/routes/app_route.gr.dart';
 
 class FormSignIn extends StatelessWidget {
   @override
@@ -78,18 +80,43 @@ class FormSignIn extends StatelessWidget {
       },
       listener: (context, state) {
         state.authFailureOrSuccessOption.fold(
-            () {},
-            (either) => either.fold((failure) {
-                  FlushbarHelper.createError(
-                      message: failure.map(
-                          invalidUsernameAndPasswordCombination: (_) =>
-                              'Username dan Password salah')).show(context);
-                }, (_) {
-                  // Navigasi jika login berhasil
-                  BlocProvider.of<SignInFromBloc>(context)
-                      .add(SignInFormEvent.moveToWeatherPage(context));
-                }));
+          () {},
+          (either) => either.fold(
+            (failure) {
+              FlushbarHelper.createError(
+                  message: failure.map(
+                      invalidUsernameAndPasswordCombination: (_) =>
+                          'Username dan Password salah')).show(context);
+            },
+              (_)=>navigateToWeatherPage(context),
+          ),
+        );
+        state.weatherFailureOrResponseOption.fold(
+          () {},
+          (either) => either.fold(
+            (weatherFailure) => FlushbarHelper.createError(
+                message: weatherFailure.map(
+                    noConnection: (_) => 'Tidak ada koneksi Internet',
+                    internalServerError: (_) =>
+                        'Kesalahan dalam sisi Server: ${weatherFailure.toString()}',
+                    userRequestError: (_) => 'Kesalahan dalam sisi request',
+                    jsonParsingError: (_) =>
+                        'Kesalahan parsing response API')).show(context),
+            (weatherResponse) {
+              AutoRouter.of(context)
+                  .replace(WeatherPageRoute(data: weatherResponse));
+            },
+          ),
+        );
       },
     );
+  }
+
+  void navigateToWeatherPage(BuildContext context){
+    FlushbarHelper.createLoading(
+        message: 'mempersiapkan data',
+        linearProgressIndicator: const LinearProgressIndicator());
+    BlocProvider.of<SignInFromBloc>(context)
+        .add(SignInFormEvent.moveToWeatherPage(context));
   }
 }
