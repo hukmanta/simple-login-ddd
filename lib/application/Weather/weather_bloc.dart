@@ -16,6 +16,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   Stream<WeatherState> mapEventToState(
     WeatherEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    yield* event.map(doNothing: (_) async* {
+      //TODO: implement function
+    });
   }
 }

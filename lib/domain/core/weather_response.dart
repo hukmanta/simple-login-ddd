@@ -1,4 +1,4 @@
-class WeatherResponse {
+class WeatherResponse{
   late Coord _coord;
   late List<Weather> _weather;
   late String _base;
@@ -26,6 +26,19 @@ class WeatherResponse {
   int get id => _id;
   String get name => _name;
   int get cod => _cod;
+
+
+  @override
+  String toString() {
+    return 'WeatherResponse($name, $main)';
+  }
+
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is WeatherResponse && other.name.hashCode == name.hashCode && other.base.hashCode == base.hashCode;
+  }
 
   WeatherResponse({
       required Coord coord,
@@ -112,6 +125,9 @@ class WeatherResponse {
     map["cod"] = _cod;
     return map;
   }
+
+  @override
+  int get hashCode => name.hashCode;
 
 }
 

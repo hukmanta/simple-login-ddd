@@ -11,10 +11,10 @@ abstract class ValueObject<T>{
 
   @override
   String toString() {
-    switch (T){
+    switch (T.runtimeType){
       case Username: return 'Username($value)';
       case Password: return 'Password($value)';
-      default: return 'Unknown';
+      default: return 'Unknown($value)';
     }
   }
 
